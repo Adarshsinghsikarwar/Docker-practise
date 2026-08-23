@@ -22,3 +22,49 @@ EXPOSE 5000
 
 # ---- Step 7: Container start hote hi ye command chalegi ----
 CMD ["node" , "server.js"]
+
+
+# # Second Way
+
+# FROM node:20
+
+# WORKDIR /app
+
+# COPY . .
+
+# RUN npm install
+
+# EXPOSE 5000
+
+# CMD['node' , 'server.js']
+
+
+# // third Way
+
+# FROM node:20-alpine
+
+# WORKDIR /app
+
+# COPY package*.json ./
+# RUN npm install
+
+# COPY . .
+
+# EXPOSE 5000
+
+# CMD['node' , 'server.js']
+
+# Production Dependencies Only
+
+# FROM node:20-alpine
+
+# WORKDIR /app
+
+# COPY package*.json ./
+# RUN npm ci --omit=dev
+
+# COPY . .
+
+# EXPOSE 5000
+
+# CMD["node" , 'server.js']
