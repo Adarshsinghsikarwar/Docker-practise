@@ -21,7 +21,8 @@ COPY . .
 EXPOSE 5000
 
 # ---- Step 7: Container start hote hi ye command chalegi ----
-CMD ["node" , "server.js"]
+# CMD ["node" , "server.js"]
+CMD ["npx","nodemon","server.js"]
 
 
 # # Second Way

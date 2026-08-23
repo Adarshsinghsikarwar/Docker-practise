@@ -10,11 +10,13 @@ app.get("/", (req, res) => {
   res.send("Hello, World!");
 });
 
+app.get("/status", (req, res) => {
+  res.json({ status: "Server is running" });
+});
+
 app.get("/health", (req, res) => {
   res.status(200).send("OK");
 });
-
-app.get()
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
